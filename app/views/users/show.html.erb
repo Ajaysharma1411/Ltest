@@ -1,0 +1,23 @@
+<h1>Welcome Pofile of : </h1>
+<h3><%= current_user.fname %></h3>
+<h3><%= current_user.email %></h3>
+
+
+
+
+
+<%= link_to "SHOW FRIENDS", new_session_path(session[:user_id]) %>//
+
+<%= link_to "ADD FRIENDS", users_path %>//
+
+<%= link_to "LOGOUT", new_session_path(session[:user_id]) %>
+
+
+<h3>friends:</h3>
+
+<%= current_user.friendship_requested.each do |friendrequest|%>
+<%= friendrequest.fname %>
+
+
+
+<%end %>

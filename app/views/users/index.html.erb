@@ -1,0 +1,36 @@
+<h2>ADD FRIENDS</h2>
+
+<table>
+ 
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+      
+      <p><b>NAME:  </b><%= user.fname %>
+         <%= user.lname %>
+<%= link_to 'ADD FRIEND',user_friend_ships_path(current_user.id,user.id),:method => :post %>
+         </p>        
+      
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table><br>
+
+
+
+
+    <%# current_user.requested_friendships.each do |request| %>
+        <%#= request.fname %>
+      <%#= link_to "Accept",  friendship_path(id: request.id), method: "put" %>
+      <%#= link_to "Decline", friendship_path(id: request.id), method: :delete %>
+   <%# end %>
+
+
+
+<%= link_to "SHOW FRIENDS", new_session_path(session[:user_id]) %>  //
+
+
+
+<%= link_to "LOGOUT", new_session_path(session[:user_id]) %>
